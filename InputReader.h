@@ -11,16 +11,16 @@
 #include <fstream>
 #include "InputDatum/InputData.h"
 
-template<class T>
 class InputReader {
 public:
-	std::list<T> readInput(const std::string &inputPath) {
+	template<class T>
+	static std::list<T> readInput(const std::string &inputPath, T (*fromInputString)(const std::string&)) {
 		std::ifstream inFile(inputPath);
 
 		std::string line;
 		std::list<T> datum = std::list<T>();
 		while (std::getline(inFile, line)) {
-			datum.push_back(T::FromInputString(line));
+			datum.push_back(fromInputString(line));
 		}
 
 		return datum;
