@@ -12,7 +12,7 @@
 template<class T>
 class ChallengeSolver {
 public:
-	void solve(int challenge, std::list<T> datum) {
+	void solve(int challenge, const std::list<T> &datum) const {
 		if (challenge == 1) {
 			solve1(datum);
 		}
@@ -22,9 +22,9 @@ public:
 	}
 
 protected:
-	virtual void solve1(std::list<T> datum) = 0;
+	virtual void solve1(const std::list<T> &datum) const = 0;
 
-	virtual void solve2(std::list<T> datum) = 0;
+	virtual void solve2(const std::list<T> &datum) const = 0;
 };
 
 

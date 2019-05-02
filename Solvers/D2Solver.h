@@ -11,8 +11,8 @@
 
 class D2Solver : public ChallengeSolver<D2Data> {
 private:
-	void solve1(std::list<D2Data> datum) override;
-	void solve2(std::list<D2Data> datum) override;
+	void solve1(const std::list<D2Data> &datum) const override;
+	void solve2(const std::list<D2Data> &datum) const override;
 };
 
 

@@ -6,7 +6,7 @@
 #include <iostream>
 #include "D2Solver.h"
 
-void D2Solver::solve1(std::list<D2Data> datum) {
+void D2Solver::solve1(const std::list<D2Data> &datum) const {
     int nb2Letters = 0;
     int nb3Letters = 0;
     for (D2Data data : datum) {
@@ -32,6 +32,23 @@ void D2Solver::solve1(std::list<D2Data> datum) {
     std::cout << (nb2Letters * nb3Letters);
 }
 
-void D2Solver::solve2(std::list<D2Data> datum) {
+void D2Solver::solve2(const std::list<D2Data> &datum) const {
+	int nbDiffs;
+	int diffIdx;
+	for (D2Data data : datum) {
+		for (D2Data data2 : datum) {
+			nbDiffs = 0;
+			for (int i = 0; i < data.getValue().size(); i++) {
+				if (data.getValue()[i] != data2.getValue()[i]) {
+					nbDiffs++;
+					diffIdx = i;
+				}
+			}
 
+			if (nbDiffs == 1) {
+				std::cout << data.getValue().erase(diffIdx, 1);
+				return;
+			}
+		}
+	}
 }

@@ -13,7 +13,7 @@ public:
 	explicit D1Data(int value);
 
 	static D1Data FromInputString(const std::string& input);
-	int getValue();
+	int getValue() const;
 
 private:
 	int value;

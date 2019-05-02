@@ -6,7 +6,7 @@
 #include <set>
 #include "D1Solver.h"
 
-void D1Solver::solve1(std::list<D1Data> datum) {
+void D1Solver::solve1(const std::list<D1Data> &datum) const {
     int sum = 0;
     for (D1Data data : datum) {
     	sum += data.getValue();
@@ -15,7 +15,7 @@ void D1Solver::solve1(std::list<D1Data> datum) {
     std::cout << sum;
 }
 
-void D1Solver::solve2(std::list<D1Data> datum) {
+void D1Solver::solve2(const std::list<D1Data> &datum) const {
 	std::set<int> frequencies = std::set<int>();
 	int sum = 0;
     auto iter = datum.begin();

@@ -14,6 +14,6 @@ D2Data D2Data::FromInputString(const std::string &input) {
 	return D2Data(input);
 }
 
-std::string D2Data::getValue() {
+std::string D2Data::getValue() const {
     return this->value;
 }

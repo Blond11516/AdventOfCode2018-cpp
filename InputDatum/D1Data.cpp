@@ -12,7 +12,7 @@ D1Data D1Data::FromInputString(const std::string &input) {
 	return D1Data(std::stoi(input));
 }
 
-int D1Data::getValue() {
+int D1Data::getValue() const {
     return this->value;
 }
 

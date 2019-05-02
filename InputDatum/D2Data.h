@@ -14,7 +14,7 @@ public:
 	explicit D2Data(std::string value);
 
 	static D2Data FromInputString(const std::string& input);
-	std::string getValue();
+	std::string getValue() const;
 
 private:
 	std::string value;
